@@ -1,0 +1,8 @@
+# build stage
+FROM node:lts-alpine
+WORKDIR /server
+COPY ./server/index.js ./
+COPY ./package*.json ./
+RUN npm install
+EXPOSE 3001
+CMD ["node", "index.js"]
